@@ -1,16 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Login App</title>
+
+    <style>
+        body {
+            background-color: #f0f2f5; /* Light Grey Background */
+            font-family: 'Segoe UI', sans-serif; /* Nalla font style */
+            display: flex;
+            justify-content: center; /* Center Horizontal */
+            align-items: center; /* Center Vertical */
+            height: 100vh; /* Full screen height */
+            margin: 0;
+        }
+
+        .login-box {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2); /* 3D Shadow effect */
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 {
+            color: #1877f2; /* FB Blue color */
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc; /* Light border */
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s; /* Smooth color change */
+        }
+
+        button:hover {
+            background-color: #1155cc; /* Dark blue when mouse over */
+        }
+    </style>
 </head>
+
 <body>
 
     <div class="login-box">
         <h2>Welcome Back!</h2>
-        <input type="text" placeholder="Username"> <br><br>
-        <input type="password" placeholder="Password"> <br><br>
-        <button>Login</button>
+        
+        <input type="text" placeholder="Username (Edhu vena podu)">
+        
+        <input type="password" id="myPass" placeholder="Secret Password"> 
+        
+        <button onclick="loginAction()">Login</button>
     </div>
+
+    <script>
+        function loginAction() {
+            // Step 1: Password box-la irukura value-va edukurom
+            var password = document.getElementById("myPass").value;
+
+            // Step 2: Check panrom (Inga 'mapla123' nu password set panni irukom)
+            if (password == "mapla123") {
+                // Correct Password
+                alert("Success! Welcome Baby ❤️");
+            } else {
+                // Wrong Password
+                alert("Wrong Password! Get out 😤");
+            }
+        }
+    </script>
 
 </body>
 </html>
